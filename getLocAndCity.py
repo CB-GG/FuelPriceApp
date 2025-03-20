@@ -6,7 +6,7 @@ def getStateCity():
     """Fetches the user's current city and state from iCloud device location."""
     
     # Must have signed into / added information to keyring via pyicloud package
-    email = "1chasebaker@gmail.com"
+    email = "Your_email@example.com"
     password = keyring.get_password("pyicloud", email)
     
     api = PyiCloudService(email, password)
@@ -18,12 +18,12 @@ def getStateCity():
         result = api.validate_2fa_code(code)
         if not result:
             print("Invalid 2FA code. Exiting...")
-            return "Hagerstown", "Maryland"  # Default location if 2FA fails
+            return "your_default_City", "YourDefaultState"  # Default location if 2FA fails
         print("2FA authentication successful.")
 
     if not api.devices:
         print("No devices found on this iCloud account.")
-        return "Hagerstown", "Maryland"
+        return "your_default_City", "your_default_State"
 
     # Select the device to track (modify the index if necessary)
     device = api.devices[3]  
@@ -70,7 +70,7 @@ def getMyCoords():
     """Fetches the user's current city and state from iCloud device location."""
     
     # Must have signed into / added information to keyring via pyicloud package
-    email = "1chasebaker@gmail.com"
+    email = "Your_email@example.com"
     password = keyring.get_password("pyicloud", email)
     
     api = PyiCloudService(email, password)
@@ -87,7 +87,7 @@ def getMyCoords():
 
     if not api.devices:
         print("No devices found on this iCloud account.")
-        return "Hagerstown", "Maryland"
+        return "your_default_City", "YourDefaultState"
 
     # Select the device to track (modify the index if necessary)
     device = api.devices[3]  
