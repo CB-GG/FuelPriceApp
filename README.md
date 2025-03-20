@@ -25,6 +25,10 @@ Ensure you have the following installed:
 - **Google Maps API Key**
 - **Puppeteer**
 - **OSM libraries** (e.g., `geopy` for distance calculations)
+  
+```bash
+pip install geopy requests beautifulsoup4 playwright && playwright install && npm install puppeteer
+```
 
 ### Setup
 1. Clone the repository:
