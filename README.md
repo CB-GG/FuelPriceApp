@@ -13,7 +13,6 @@ NearbyFuelTracker is a Python-based application designed to help users find the 
 ## 🛠️ Tech Stack
 - **Python** (Core logic and data processing)
 - **Puppeteer** (Web scraping)
-- **Google Maps API** (Driving directions and mapping)
 - **OpenStreetMap (OSM)** (Location and distance calculations)
 - **Hugging Face (Optional)** (For possible future enhancements like sentiment-based fuel tracking)
 
@@ -31,29 +30,19 @@ pip install geopy requests beautifulsoup4 playwright && playwright install && np
 ```
 
 ### Setup
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/NearbyFuelTracker.git
-   cd NearbyFuelTracker
-   ```
-2. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Install Puppeteer:
-   ```sh
-   npm install puppeteer
-   ```
-4. Set up your Google Maps API Key:
-   - Create a `.env` file and add:
-     ```sh
-     GOOGLE_MAPS_API_KEY=your_api_key_here
-     ```
+
+1. Install dependencies:
+  ```bash
+  pip install geopy requests beautifulsoup4 playwright && playwright install && npm install puppeteer
+  ```
+2. Ensure you replace the placeholder variables for your email address, default city, and default state in the getLocAndCity file.
+
+3. This was designed for use with apple products. For optimal usage, you will want to setup the pyicloud keyring with your appropriate apple ID information for the getLocAndCity file functionality. Additionally, using this library, the devices array will contain all your associated devices in a list. The device I wanted the location of happened to be at position [3], you will need to find which location your device is at in the list and change the number accordingly. This can be done easily by just printing the list, then counting what position your device is in the list (keep in mind it is base 0).
 
 ## 🚀 Usage
 Run the application with:
 ```sh
-python main.py
+python fuel_price_main.py
 ```
 The program will determine your location, fetch fuel prices, and display the cheapest and closest gas stations.
 
@@ -69,5 +58,5 @@ Contributions are welcome! To contribute:
 5. Open a Pull Request
 
 ## 📧 Contact
-For any inquiries, feel free to open an issue or reach out via email at `your-email@example.com`.
+For any inquiries, feel free to open an issue or reach out via email at `1Chasebaker@gmail.com`.
 
