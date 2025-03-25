@@ -50,12 +50,12 @@ def getStateCity():
 
                 state = (
                     address.get('state') or
-                    "Maryland"  # Default if state is unknown
+                    "your_default_state"  # Default if state is unknown
                 )
 
             except Exception as e:
                 print(f"Error finding location: {e}")
-                return "Hagerstown", "Maryland"  # Default in case of error
+                return "your_default_city", "your_default_state"  # Default in case of error
             
             print(f"Detected Location: {city}, {state}")
             return city, state  # Return both city and state
@@ -64,7 +64,7 @@ def getStateCity():
         else:
             print(f"Location not available for {device['name']}")
     
-    return "Hagerstown", "Maryland"  # Default if location is not found
+    return "your_default_city", "your_default_state"  # Default if location is not found
 
 def getMyCoords():
     """Fetches the user's current city and state from iCloud device location."""
